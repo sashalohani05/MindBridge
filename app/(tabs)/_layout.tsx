@@ -18,26 +18,36 @@ export default function TabLayout() {
           backgroundColor: '#FFF8F0',
           borderTopColor: '#F0E0D0',
         },
+        tabBarLabelStyle: {
+          fontSize: 11,
+        },
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="routine"
         options={{
           title: 'Routine',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="list.bullet" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="list.bullet" color={color} />,
         }}
       />
       <Tabs.Screen
         name="loved-ones"
         options={{
-          title: 'Who Loves Me',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="heart.fill" color={color} />,
+          title: 'Family',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="heart.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="reminders"
+        options={{
+          title: 'Reminders',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="bell.fill" color={color} />,
         }}
       />
     </Tabs>

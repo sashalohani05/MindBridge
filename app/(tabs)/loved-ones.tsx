@@ -3,38 +3,44 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 const lovedOnes = [
   {
     id: '1',
-    name: 'Sarah',
-    relation: 'Daughter',
+    name: 'Priya',
+    relation: 'Beti',
+    relationHindi: 'बेटी',
     emoji: '👩',
   },
   {
     id: '2',
-    name: 'James',
-    relation: 'Son',
+    name: 'Arjun',
+    relation: 'Beta',
+    relationHindi: 'बेटा',
     emoji: '👨',
   },
   {
     id: '3',
-    name: 'Margaret',
-    relation: 'Sister',
+    name: 'Sunita',
+    relation: 'Behen',
+    relationHindi: 'बहन',
     emoji: '👩‍🦳',
   },
   {
     id: '4',
-    name: 'Tommy',
-    relation: 'Grandson',
+    name: 'Rohan',
+    relation: 'Pota',
+    relationHindi: 'पोता',
     emoji: '👦',
   },
   {
     id: '5',
-    name: 'Lily',
-    relation: 'Granddaughter',
+    name: 'Ananya',
+    relation: 'Poti',
+    relationHindi: 'पोती',
     emoji: '👧',
   },
   {
     id: '6',
-    name: 'Dr. Patel',
+    name: 'Dr. Sharma',
     relation: 'Doctor',
+    relationHindi: 'डॉक्टर',
     emoji: '👨‍⚕️',
   },
 ];
@@ -43,7 +49,7 @@ export default function LovedOnesScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>Who Loves Me 💛</Text>
-      <Text style={styles.subtitle}>People who care about you</Text>
+      <Text style={styles.subtitle}>Aapke apne log • आपके अपने लोग</Text>
 
       <View style={styles.grid}>
         {lovedOnes.map((person) => (
@@ -51,6 +57,7 @@ export default function LovedOnesScreen() {
             <Text style={styles.emoji}>{person.emoji}</Text>
             <Text style={styles.name}>{person.name}</Text>
             <Text style={styles.relation}>{person.relation}</Text>
+            <Text style={styles.relationHindi}>{person.relationHindi}</Text>
           </View>
         ))}
       </View>
@@ -103,10 +110,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#5C4033',
-    marginBottom: 4,
+    marginBottom: 2,
   },
   relation: {
     fontSize: 14,
     color: '#A0856C',
+    marginBottom: 2,
+  },
+  relationHindi: {
+    fontSize: 14,
+    color: '#C4A882',
   },
 });

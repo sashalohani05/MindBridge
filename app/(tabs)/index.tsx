@@ -11,7 +11,12 @@ export default function HomeScreen() {
     return () => clearInterval(timer);
   }, []);
 
-  const hours = time.toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit' });
+  const hours = time.toLocaleTimeString('en-AU', { 
+    hour: 'numeric', 
+    minute: '2-digit', 
+    hour12: true 
+  }).replace(' ', '\u00A0');
+  
   const day = time.toLocaleDateString('en-AU', { weekday: 'long' });
   const date = time.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -78,7 +83,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   time: {
-    fontSize: 72,
+    fontSize: 58,
     fontWeight: 'bold',
     color: '#5C4033',
     marginBottom: 8,
