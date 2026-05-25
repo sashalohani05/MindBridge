@@ -19,35 +19,42 @@ export default function TabLayout() {
           borderTopColor: '#F0E0D0',
         },
         tabBarLabelStyle: {
-          fontSize: 11,
+          fontSize: 10,
         },
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={26} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="routine"
         options={{
           title: 'Routine',
-          tabBarIcon: ({ color }) => <IconSymbol size={26} name="list.bullet" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="list.bullet" color={color} />,
         }}
       />
       <Tabs.Screen
         name="loved-ones"
         options={{
           title: 'Family',
-          tabBarIcon: ({ color }) => <IconSymbol size={26} name="heart.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="heart.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="reminders"
         options={{
           title: 'Reminders',
-          tabBarIcon: ({ color }) => <IconSymbol size={26} name="bell.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="bell.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="memories"
+        options={{
+          title: 'Memories',
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="photo.fill" color={color} />,
         }}
       />
     </Tabs>
