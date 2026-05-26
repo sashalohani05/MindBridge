@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -5,18 +6,19 @@ export default function HomeScreen() {
   const [time, setTime] = useState(new Date());
   const [checkedIn, setCheckedIn] = useState(false);
   const [checkInTime, setCheckInTime] = useState('');
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const hours = time.toLocaleTimeString('en-AU', { 
-    hour: 'numeric', 
-    minute: '2-digit', 
-    hour12: true 
+  const hours = time.toLocaleTimeString('en-AU', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
   }).replace(' ', '\u00A0');
-  
+
   const day = time.toLocaleDateString('en-AU', { weekday: 'long' });
   const date = time.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -29,7 +31,15 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.appName}>MindBridge</Text>
+      <View style={styles.header}>
+        <Text style={styles.appName}>MindBridge</Text>
+        <TouchableOpacity
+          style={styles.carerButton}
+          onPress={() => router.push('/(tabs)/carer')}
+        >
+          <Text style={styles.carerButtonText}>Carer View →</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.timeCard}>
         <Text style={styles.time}>{hours}</Text>
@@ -64,11 +74,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 24,
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginBottom: 40,
+  },
   appName: {
     fontSize: 22,
     color: '#A0856C',
-    marginBottom: 40,
     letterSpacing: 2,
+  },
+  carerButton: {
+    backgroundColor: '#F4A261',
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+  },
+  carerButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: 'bold',
   },
   timeCard: {
     backgroundColor: '#FFFFFF',

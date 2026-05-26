@@ -57,6 +57,15 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={24} name="photo.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="carer"
+        options={{
+          title: 'Carer',
+          tabBarIcon: ({ color }) => <IconSymbol size={24} name="person.2.fill" color={color} />,
+          tabBarStyle: { display: 'none' },
+          tabBarItemStyle: { display: 'none' },
+        }}
+      />
     </Tabs>
   );
 }
