@@ -4,6 +4,10 @@ MindBridge is a bilingual mobile app prototype for people living with dementia a
 
 Built with React Native, TypeScript, Expo and Expo Router.
 
+## Reminders preview
+
+![MindBridge reminders with English and Hindi labels](MindBridge%20Reminder.png)
+
 ## Get started
 
 1. Install dependencies
